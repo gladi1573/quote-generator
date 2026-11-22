@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <script>
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+    }
+</script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <button id="theme-toggle">🌙</button>
+    <div class="card">
+        <h1>Quote of the Day</h1>
+        <p class="quote">{{ quote }}</p>
+        {% if search %}
+            <p class="search-info">Search results for: "{{ search }}"</p>
+        {% endif %}
+        {% if author %}
+            <p class="author">— {{ author }}</p>
+        {% endif %}
+        <form action="{{ url_for('home') }}" method="get" class="search">
+            <input type="text" name="author" placeholder="Search by author..." value="{{ search }}">
+            <button type="submit">Search</button>
+        </form>
+        <a class="btn" href="{{ url_for('home') }}">New Quote</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

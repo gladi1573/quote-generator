@@ -1,0 +1,84 @@
+:root {
+    --bg: #1e293b;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+    --author-color: #6b7280;
+    --btn-bg: #3b82f6;
+    --btn-hover-bg: #2563eb;
+}
+
+html.dark {
+    --bg: #0f172b;
+    --card-bg: #1e293b;
+    --text-color: #f1f5f9;
+    --author-color: #94a3b8;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    color: var(--text-color);
+}
+
+.quote {
+    font-size: 1.4rem;
+    font-style: italic;
+    animation: fadeIn 2s ease-in-out 0.5s backwards;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--btn-bg);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--btn-hover-bg);
+}
+
+.author {
+    color: var(--author-color);
+    font-size: 1.1rem;
+    text-align: right;
+    animation: fadeIn 2s ease-in-out 1s backwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--btn-bg);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-info {
+    color: var(--author-color);
+    font-size: 0.9rem;
+}
