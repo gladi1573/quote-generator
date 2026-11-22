@@ -1,15 +1,17 @@
 # Quote Generator
 
-A Flask web app that generates random quotes with there author name.
+A Flask web app that generates random quotes with their author name.
 
 ## Features
 
 - Random quotes from the DummyJSON API (1,400+ quotes)
 - Search quotes by author (case-insensitive, partial matches)
 - Dark/light mode that remembers your choice
-- ___
-- ___
-- ___
+- Fallback to local quotes if the API is down
+- Staggered fade-in animations
+- Quote list cached in memory after the first search
+- No light-mode flash on reload
+- Responsive centred card layout
 
 ## How to run
 
