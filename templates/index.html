@@ -15,10 +15,10 @@
     <button id="theme-toggle">🌙</button>
     <div class="card">
         <h1>Quote of the Day</h1>
-        <p class="quote">{{ quote }}</p>
         {% if search %}
             <p class="search-info">Search results for: "{{ search }}"</p>
         {% endif %}
+        <p class="quote">{{ quote }}</p>
         {% if author %}
             <p class="author">— {{ author }}</p>
         {% endif %}
