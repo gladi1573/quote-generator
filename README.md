@@ -29,5 +29,6 @@ Then open http://127.0.0.1:5000 in your browser.
 ## Built with
 
 - Python + Flask
-- ___
-- ___
+- Requests (Python HTTP library)
+- DummyJSON Quotes API
+- HTML, CSS, JavaScript
