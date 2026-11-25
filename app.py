@@ -86,7 +86,7 @@ def remove_favourite():
 
     favourites = session.get("favourites", [])
     if 0 <= index < len(favourites):
-        favourites.__delitem__(index)
+        favourites.pop(index)
         session["favourites"] = favourites
 
     return redirect(url_for("show_favourites"))
