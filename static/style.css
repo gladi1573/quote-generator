@@ -88,3 +88,10 @@ body {
     margin-top: 15px;
     color: var(--author-color);
 }
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+}

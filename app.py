@@ -80,5 +80,17 @@ def show_favourites():
     return render_template("favourites.html", favourites=favourites)
 
 
+@app.route("/favourite/remove", methods=["POST"])
+def remove_favourite():
+    index = int(request.form.get("index", -1))
+
+    favourites = session.get("favourites", [])
+    if 0 <= index < len(favourites):
+        favourites.__delitem__(index)
+        session["favourites"] = favourites
+
+    return redirect(url_for("show_favourites"))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
