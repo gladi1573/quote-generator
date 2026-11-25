@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
 import random
 import requests
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Replace with a real secret key
 
 API_URL = "https://dummyjson.com/quotes/random"
 
