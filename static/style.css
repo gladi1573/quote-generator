@@ -82,3 +82,9 @@ body {
     color: var(--author-color);
     font-size: 0.9rem;
 }
+
+.fav-link {
+    display: block;
+    margin-top: 15px;
+    color: var(--author-color);
+}

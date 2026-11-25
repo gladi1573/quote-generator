@@ -73,5 +73,12 @@ def add_favourite():
 
     return redirect(url_for("home"))
 
+
+@app.route("/favourites")
+def show_favourites():
+    favourites = session.get("favourites", [])
+    return render_template("favourites.html", favourites=favourites)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

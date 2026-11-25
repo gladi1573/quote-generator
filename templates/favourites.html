@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourites</title>
+    <script>
+    if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+    }
+</script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <button id="theme-toggle">🌙</button>
+    <div class="card">
+                <h1>My Favourites</h1>
+        {% for fav in favourites %}
+            <p class="quote">{{ fav.quote }}</p>
+            <p class="author">— {{ fav.author }}</p>
+        {% else %}
+            <p>No favourites yet.</p>
+        {% endfor %}
+        <a class="btn" href="{{ url_for('home') }}">← Back</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
