@@ -62,5 +62,16 @@ def home():
     return render_template("index.html", quote=text, author=author, search=search)
 
 
+@app.route("/favourite", methods=["POST"])
+def add_favourite():
+    quote = request.form.get("quote", "")
+    author = request.form.get("author", "")
+
+    favourites = session.get("favourites", [])
+    favourites.append({"quote": quote, "author": author})
+    session["favourites"] = favourites
+
+    return redirect(url_for("home"))
+
 if __name__ == "__main__":
     app.run(debug=True)
