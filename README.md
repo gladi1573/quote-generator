@@ -12,6 +12,9 @@ A Flask web app that generates random quotes with their author name.
 - Quote list cached in memory after the first search
 - No light-mode flash on reload
 - Responsive centred card layout
+- Save favourite quotes (stored in the browser session)
+- View and remove saved favourites
+- Shared page layout with Jinja template inheritance
 
 ## How to run
 
@@ -32,3 +35,16 @@ Then open http://127.0.0.1:5000 in your browser.
 - Requests (Python HTTP library)
 - DummyJSON Quotes API
 - HTML, CSS, JavaScript
+
+## Project structure
+
+```
+app.py               Flask routes and logic
+templates/
+  base.html          shared layout (head, theme toggle, scripts)
+  index.html         homepage: quote, search, save
+  favourites.html    saved quotes with remove buttons
+static/
+  style.css          styles + light/dark theme variables
+  script.js          theme toggle
+```
